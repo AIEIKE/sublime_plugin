@@ -12,12 +12,13 @@ class TranslateCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         sel = self.view.sel()
         if len(sel) > 0:
-            string = sel[0]
-        word = self.view.substr(string)
+            sel = sel[0]
+        text = self.view.substr(sel)
+        words = text.replace('\n', ' ')
         data = {
             'doctype': 'json',
             'type': 'AUTO',
-            'i': word
+            'i': words
         }
         params = parse.urlencode(data)
         zurl = url + '?' + params
