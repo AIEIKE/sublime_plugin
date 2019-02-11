@@ -1,2 +1,5 @@
-# sublime_translate
-sublime插件【翻译】
+# sublime_plugin
+
+***
++ sublime插件【翻译】
+***
